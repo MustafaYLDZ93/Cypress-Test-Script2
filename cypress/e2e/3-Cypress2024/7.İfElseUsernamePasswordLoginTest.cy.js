@@ -37,7 +37,7 @@ describe('Asenkron Test Örneği', () => {
       await cy.get('h3[data-test="error"]').should('be.visible');
     }
   });
-  it('Yanlış Bilgiler ile Giriş yapma ve Hata Mesajı Kontrol Test', async () => {
+  it('Yanlış Bilgiler ile Giriş yapma ve Hata Mesajı Kontrol Testi', async () => {
     // SauceDemo uygulamasını ziyaret et
     cy.visit('https://www.saucedemo.com/v1/index.html');
 

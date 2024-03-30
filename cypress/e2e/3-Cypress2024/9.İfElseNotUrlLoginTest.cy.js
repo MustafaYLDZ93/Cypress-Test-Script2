@@ -26,7 +26,7 @@ describe('Asenkron Test Örneği', () => {
 
 
       } else {
-        // Ürünü sepete ekle
+        // Ürünü sepete ekleme
         await cy.get('.inventory_item').first().find('.btn_primary').click();
   
         // Sepete git butonuna tıkla

@@ -18,7 +18,7 @@
  "Chart": {
    
     "AddToChart":"div#inventory_container div:nth-child(1) > div.pricebar > button",
-    "ShoppingCartSvg":".shopping_cart_link"
+    "ShoppingCartSvgg":".shopping_cart_link"
   
   }
 }

@@ -3,7 +3,7 @@ import{SaucedemoLoginElementsActions} from "../../PageObjects/PageActions/Sauced
 const SaucedemoLogin = new SaucedemoLoginElementsActions
 
 describe('Page Object Model ile Test', () => {
-    xit('POM ile Başarılı ve Başarısız Login ve Hata Mesajı Doğrulama Testi ', () => {
+    it('POM ile Başarılı ve Başarısız Login ve Hata Mesajı Doğrulama Testi ', () => {
       cy.visit('https://www.saucedemo.com/v1/index.html')
 
       SaucedemoLogin.username();

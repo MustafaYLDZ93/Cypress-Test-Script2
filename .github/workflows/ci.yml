@@ -1,4 +1,4 @@
-name: TestRun
+name: Artifacts
 on: [push]
 jobs:
   cypress-run:
@@ -7,36 +7,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: cypress-io/github-action@v6
-      
+      # after the test run completes store videos and any screenshots
       - uses: actions/upload-artifact@v4
+        # add the line below to store screenshots only on failures
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
       - uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: cypress-videos
           path: cypress/videos
-
-- name: Prepare reports
-  if: always()
-  run: |
-    cd frontend
-    npm i -g mochawesome-merge
-    npm i -g mochawesome-report-generator
-    mochawesome-merge test/cypress/reports/mocha/*.json > ./test/cypress/reports/mocha/index.json
-    marge --charts=true --showPassed=false -o ./test/cypress/reports/mocha/ ./test/cypress/reports/mocha/index.json
-- name: Cypress report
-  uses: dmitry/cypress-report-action@v1
-  with:
-    token: ${{ secrets.GITHUB_TOKEN }}
-    pathname: frontend/test/cypress/reports/mocha/index.json
-  if: always()
-   
-          
-
-        
-
-      
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`

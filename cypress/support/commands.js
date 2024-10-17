@@ -31,7 +31,9 @@ Cypress.Commands.add("WrongUsernameErrorMessageCustomCommandsAndPOM", () => {
       cy.get(Data.Chart.AddToChart).contains('REMOVE')
       cy.scrollTo("top");
       cy.get(Data.Chart.ShoppingCartSvg).click()
+      cy.get(Data.Login.Hata_Mesajı).should('not.exist')
        
    
     });
+    
   });

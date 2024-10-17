@@ -18,8 +18,7 @@ describe('Page Object Model ile Test', () => {
       SaucedemoLogin.ErrorMessage().contains("Username and password do not match any user in this service")
     });
     
-    xit('Fixture ile Custom Command kullanarak Login Testi', () => {
-      cy.LoginFixtureAndCustomCommand()
+    it('Fixture ile Custom Command kullanarak Login Testi', () => {
       cy.pause()
       cy.LoginAndAddToChartFixtureAndCustomCommand()
       
